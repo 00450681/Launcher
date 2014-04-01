@@ -35,6 +35,8 @@ public final class R {
     }
     public static final class array {
         public static final int extra_wallpapers=0x7f070003;
+        /**  主界面上的拨打电话和浏览器图标 
+         */
         public static final int hotseat_icons=0x7f070001;
         public static final int hotseats=0x7f070000;
         public static final int settings_sorting_names=0x7f070004;

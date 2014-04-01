@@ -235,6 +235,8 @@ public final class Launcher extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.w(TAG, "the launcher's onCreate ");
+        
         LauncherApplication app = ((LauncherApplication)getApplication());
         mModel = app.setLauncher(this);
         mIconCache = app.getIconCache();
@@ -243,6 +245,7 @@ public final class Launcher extends Activity
         mInflater = getLayoutInflater();
         Preferences.getInstance().setLauncher(this);
 
+        // widget host initialize
         mAppWidgetManager = AppWidgetManager.getInstance(this);
         mAppWidgetHost = new LauncherAppWidgetHost(this, APPWIDGET_HOST_ID);
         mAppWidgetHost.startListening();
@@ -415,6 +418,9 @@ public final class Launcher extends Activity
         }
     }
 
+    /**
+     * 设置壁纸的dimension是width * height
+     */
     private void setWallpaperDimension() {
         WallpaperManager wpm = (WallpaperManager)getSystemService(WALLPAPER_SERVICE);
 
@@ -440,6 +446,9 @@ public final class Launcher extends Activity
     // each Intent, if it resolves to a single app, use that as the launch
     // intent & use that app's label as the contentDescription. Otherwise,
     // retain the ResolveActivity so the user can pick an app.
+    /**
+     * 加载拨打电话图标和浏览器图标
+     */
     private void loadHotseats() {
         if (mHotseatConfig == null) {
             mHotseatConfig = getResources().getStringArray(R.array.hotseats);

@@ -82,6 +82,11 @@ public class LauncherApplication extends Application {
         }
     };
 
+    /**
+     * 向 LauncherModel中注册launcher实现的callback
+     * @param launcher -- 实现了 LauncherModel中的Callback接口
+     * @return
+     */
     LauncherModel setLauncher(Launcher launcher) {
         mModel.initialize(launcher);
         return mModel;

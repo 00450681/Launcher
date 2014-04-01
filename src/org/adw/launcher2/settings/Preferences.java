@@ -16,6 +16,11 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
+/**
+ * 单例Preference
+ * @author Administrator
+ *
+ */
 public class Preferences implements OnSharedPreferenceChangeListener {
 
 	private final static String EmptyString = "";
@@ -32,6 +37,11 @@ public class Preferences implements OnSharedPreferenceChangeListener {
 	private Launcher mLauncher = null;
 
 
+	/**
+	 * 设置mLauncher成员和注册Launcher中的OnSharedPreferenceChangeListener接口
+	 * @param launcher -- 如果为null，则unregisterOnSharedPreferenceChangeListener
+	 * 且mPreferences成员变为null；如果不为null，则registerOnSharedPreferenceChangeListener
+	 */
 	public void setLauncher(Launcher launcher) {
 		if (launcher == null && mPreferences != null) {
 			mPreferences.unregisterOnSharedPreferenceChangeListener(this);

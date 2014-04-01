@@ -155,8 +155,8 @@
         	android:exported="false" />
 
     </application>
-    <uses-sdk android:minSdkVersion="7" 
-              android:targetSdkVersion="9"/>
+    <uses-sdk android:minSdkVersion="10" 
+              android:targetSdkVersion="11"/>
     <supports-screens android:largeScreens="true"
 		android:normalScreens="true" android:smallScreens="true"
 		android:anyDensity="true" />
